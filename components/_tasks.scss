@@ -1,0 +1,52 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.tasks__container {
+  .tasks__list {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 0;
+    gap: 2em;
+  }
+  .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 1em;
+
+    label {
+      display: flex;
+      gap: 2em;
+      @include mixins.cursor-pointer();
+    }
+    &__buttons {
+      display: flex;
+      gap: 1.5em;
+      color: variables.$primary-color;
+
+      .fa{
+        &-pencil,
+        &-square-xmark {
+          &:hover {
+            @include mixins.cursor-pointer();
+            transform: scale(1.2);
+          }
+        }
+
+        &-square-xmark {
+          color: red;
+        }
+      }
+    }
+    &-content {
+      @include mixins.font-family-size-color(
+        variables.$montserrat,
+        1.2rem,
+        variables.$text-color
+      );
+    }
+  }
+
+
+}

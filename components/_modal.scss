@@ -1,0 +1,69 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.modal {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  height: 20rem;
+  width: 40%;
+  border-radius: 20px;
+  place-content: center;
+  position: fixed;
+  align-self: center;
+  justify-self: center;
+  top: 25%;
+  left: 28%;
+  .fa-x {
+    @include mixins.cursor-pointer();
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    color: red;
+  }
+  label {
+    @include mixins.font-family-size-color(
+      variables.$inter,
+      1.8rem,
+      variables.$primary-color
+    );
+    font-weight: 600;
+    &:hover {
+      @include mixins.cursor-pointer();
+    }
+  }
+  .submit-task {
+    display: flex;
+    #created-task {
+      flex: 2;
+      padding: 1.5em;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border: none;
+      background-color: variables.$text-color-hover;
+      &::placeholder {
+        @include mixins.font-family-size-color(
+          variables.$montserrat,
+          1.3rem,
+          #fff
+        );
+        padding: 1em;
+      }
+    }
+    .submit-button {
+      @include mixins.font-family-size-color(
+        variables.$montserrat,
+        1.3rem,
+        #fff
+      );
+      font-weight: 500;
+      flex: 1;
+      border: none;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      background-color: variables.$primary-color;
+    }
+  }
+}

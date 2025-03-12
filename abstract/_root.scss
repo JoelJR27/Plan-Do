@@ -1,0 +1,12 @@
+body {
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  position: relative;
+  .done {
+    text-decoration: line-through;
+  }
+
+  .hidden {
+    display: none;
+  }
+}

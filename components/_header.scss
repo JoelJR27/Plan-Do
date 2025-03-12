@@ -1,0 +1,41 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid variables.$primary-color;
+  padding: 2rem;
+  gap: 2em;
+  .header__title__container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    .header__title {
+      @include mixins.font-family-size-color(
+        variables.$inter,
+        2rem,
+        variables.$primary-color
+      );
+      font-weight: 600;
+    }
+  }
+  #new-task {
+    @include mixins.font-family-size-color(variables.$inter, 1.5rem, variables.$secondary-color);
+    display: flex;
+    place-items: center;
+    gap: 1em;
+    padding: 1em 2em;
+    border-radius: 10px;
+    &:hover {
+      background-color: variables.$button-color-hover;
+      cursor: pointer;
+        @include mixins.cursor-pointer();
+        color: variables.$text-color-hover;
+
+    }
+  }
+}
+  
+

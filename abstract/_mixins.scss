@@ -1,0 +1,9 @@
+@mixin font-family-size-color($f-family, $f-size, $f-color){
+    font-family: $f-family;
+    font-size: $f-size;
+    color: $f-color;
+}
+
+@mixin cursor-pointer(){
+    cursor: pointer;
+}
