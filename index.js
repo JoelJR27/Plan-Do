@@ -1,11 +1,15 @@
 import { showModal, closeModalButton, closeModal } from "./js/modal.js";
+import { createNewTask } from "./js/newTask.js";
+import { markaAsComplete } from "./js/completeTask.js";
 const addNewTaskButton = document.getElementById("new-task");
-// function showModal() {
-//     const modal = document.querySelector(".modal");
-//   modal.classList.remove("hidden");
-// }
+const submitButton = document.querySelector(".submit-button");
 
 addNewTaskButton.addEventListener("click", (e) => {
-    showModal()
+  showModal();
 });
 
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  createNewTask();
+  markaAsComplete();
+});

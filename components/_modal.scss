@@ -43,6 +43,7 @@
       border-bottom-left-radius: 20px;
       border: none;
       background-color: variables.$text-color-hover;
+      color: #fff;
       &::placeholder {
         @include mixins.font-family-size-color(
           variables.$montserrat,
@@ -53,6 +54,7 @@
       }
     }
     .submit-button {
+      @include mixins.cursor-pointer();
       @include mixins.font-family-size-color(
         variables.$montserrat,
         1.3rem,
