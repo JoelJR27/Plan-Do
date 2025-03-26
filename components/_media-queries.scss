@@ -46,16 +46,17 @@
 
 @media screen and (max-width: 768px) {
   body {
-    width: 100dvw;
+    width: 105dvw;
     display: flex;
     flex-direction: column;
     .links-container {
-      max-width: 83%;
+      width: 100%;
       align-self: center;
       border-bottom-left-radius: 0.5em;
       border-bottom-right-radius: 0.5em;
       .links-list {
         gap: 2em;
+        justify-content: center;
         .links-button {
           font-size: 1rem;
         }
@@ -110,9 +111,9 @@
       }
 
       .modal {
-        width: 75%;
+        width: 80%;
         top: 25%;
-        left: 6.55%;
+        left: 4%;
         .fa-x {
           top: 7%;
           right: 5%;
@@ -150,11 +151,12 @@
     display: flex;
     flex-direction: column;
     .links-container {
-      max-width: 80%;
-      align-self: center;
+      max-width: 100%;
       border-bottom-left-radius: 0.5em;
       border-bottom-right-radius: 0.5em;
       .links-list {
+        align-self: center;
+        justify-content: center;
         gap: 2em;
         .links-button {
           font-size: 1rem;
@@ -221,45 +223,45 @@
           font-size: 1.3rem;
         }
       }
-    }
 
-    .modal {
-      width: 75%;
-      top: 25%;
-      left: 6%;
-      .fa-x {
-        top: 6%;
-        right: 8%;
-      }
-      label {
-        font-size: 1.3rem;
-        font-weight: 600;
-      }
-      .submit-task {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6em;
-        #created-task,
-        #edited-task {
-          padding: 1em;
-          border-radius: 0.5em;
-          &::placeholder {
-            font-size: 1rem;
+      .modal {
+        width: 85%;
+        top: 25%;
+        left: 1%;
+        .fa-x {
+          top: 6%;
+          right: 8%;
+        }
+        label {
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+        .submit-task {
+          display: flex;
+          flex-direction: column;
+          gap: 0.6em;
+          #created-task,
+          #edited-task {
+            padding: 1em;
+            border-radius: 0.5em;
+            &::placeholder {
+              font-size: 1rem;
+            }
+            &:focus {
+              outline: 1px solid variables.$primary-color;
+            }
           }
-          &:focus {
-            outline: 1px solid variables.$primary-color;
+          .submit-button {
+            align-self: center;
+            width: 60%;
+            font-size: 1em;
+            padding: 0.5em;
+            border-radius: 0.5em;
           }
         }
-        .submit-button {
-          align-self: center;
-          width: 60%;
-          font-size: 1em;
-          padding: 0.5em;
-          border-radius: 0.5em;
+        .alert-text {
+          font-size: 1.3rem;
         }
-      }
-      .alert-text {
-        font-size: 1.3rem;
       }
     }
   }
@@ -267,9 +269,14 @@
 
 @media screen and (max-width: 380px) {
   body {
+    width: 105dvw;
+    margin: 0;
+    padding: 0;
     .links-container {
-      width: 70%;
+      width: 100%;
+      align-self: center;
       .links-list {
+        justify-content: center;
         gap: 2em;
         .links-button {
           font-size: 0.7rem;
@@ -338,9 +345,9 @@
         }
       }
       .modal {
-        width: 75%;
+        width: 80%;
         top: 25%;
-        left: 4%;
+        left: 1%;
         .fa-x {
           top: 7%;
           right: 8%;

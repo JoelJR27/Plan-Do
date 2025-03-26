@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body {
+  margin: 0;
+  padding: 0;
   background-color: #f3f3f3;
   box-sizing: border-box;
   position: relative;
@@ -266,18 +268,19 @@ body .blur {
 }
 @media screen and (max-width: 768px) {
   body {
-    width: 100dvw;
+    width: 105dvw;
     display: flex;
     flex-direction: column;
   }
   body .links-container {
-    max-width: 83%;
+    width: 100%;
     align-self: center;
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
   }
   body .links-container .links-list {
     gap: 2em;
+    justify-content: center;
   }
   body .links-container .links-list .links-button {
     font-size: 1rem;
@@ -324,9 +327,9 @@ body .blur {
     font-size: 1.2rem;
   }
   body .main-container .modal {
-    width: 75%;
+    width: 80%;
     top: 25%;
-    left: 6.55%;
+    left: 4%;
   }
   body .main-container .modal .fa-x {
     top: 7%;
@@ -362,12 +365,13 @@ body .blur {
     flex-direction: column;
   }
   body .links-container {
-    max-width: 80%;
-    align-self: center;
+    max-width: 100%;
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
   }
   body .links-container .links-list {
+    align-self: center;
+    justify-content: center;
     gap: 2em;
   }
   body .links-container .links-list .links-button {
@@ -427,56 +431,63 @@ body .blur {
   body .main-container .tasks__container .clear-all {
     font-size: 1.3rem;
   }
-  body .modal {
-    width: 75%;
+  body .main-container .modal {
+    width: 85%;
     top: 25%;
-    left: 6%;
+    left: 1%;
   }
-  body .modal .fa-x {
+  body .main-container .modal .fa-x {
     top: 6%;
     right: 8%;
   }
-  body .modal label {
+  body .main-container .modal label {
     font-size: 1.3rem;
     font-weight: 600;
   }
-  body .modal .submit-task {
+  body .main-container .modal .submit-task {
     display: flex;
     flex-direction: column;
     gap: 0.6em;
   }
-  body .modal .submit-task #created-task,
-  body .modal .submit-task #edited-task {
+  body .main-container .modal .submit-task #created-task,
+  body .main-container .modal .submit-task #edited-task {
     padding: 1em;
     border-radius: 0.5em;
   }
-  body .modal .submit-task #created-task::-moz-placeholder, body .modal .submit-task #edited-task::-moz-placeholder {
+  body .main-container .modal .submit-task #created-task::-moz-placeholder, body .main-container .modal .submit-task #edited-task::-moz-placeholder {
     font-size: 1rem;
   }
-  body .modal .submit-task #created-task::placeholder,
-  body .modal .submit-task #edited-task::placeholder {
+  body .main-container .modal .submit-task #created-task::placeholder,
+  body .main-container .modal .submit-task #edited-task::placeholder {
     font-size: 1rem;
   }
-  body .modal .submit-task #created-task:focus,
-  body .modal .submit-task #edited-task:focus {
+  body .main-container .modal .submit-task #created-task:focus,
+  body .main-container .modal .submit-task #edited-task:focus {
     outline: 1px solid #1d202f;
   }
-  body .modal .submit-task .submit-button {
+  body .main-container .modal .submit-task .submit-button {
     align-self: center;
     width: 60%;
     font-size: 1em;
     padding: 0.5em;
     border-radius: 0.5em;
   }
-  body .modal .alert-text {
+  body .main-container .modal .alert-text {
     font-size: 1.3rem;
   }
 }
 @media screen and (max-width: 380px) {
+  body {
+    width: 105dvw;
+    margin: 0;
+    padding: 0;
+  }
   body .links-container {
-    width: 70%;
+    width: 100%;
+    align-self: center;
   }
   body .links-container .links-list {
+    justify-content: center;
     gap: 2em;
   }
   body .links-container .links-list .links-button {
@@ -534,9 +545,9 @@ body .blur {
     font-size: 1.2rem;
   }
   body .main-container .modal {
-    width: 75%;
+    width: 80%;
     top: 25%;
-    left: 4%;
+    left: 1%;
   }
   body .main-container .modal .fa-x {
     top: 7%;
