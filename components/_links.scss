@@ -1,0 +1,28 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+
+.links-container {
+  width: 100vh;
+  background-color: variables.$white;
+  justify-self: center;
+  padding: 2em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  box-shadow: 7px 3px 74px -15px rgba(0, 0, 0, 0.45);
+  .links-list {
+    display: flex;
+    justify-content: center;
+    gap: 4em;
+    .links-button {
+      @include mixins.font-family-size-color(
+        variables.$montserrat,
+        1.5rem,
+        variables.$primary-color
+      );
+      font-weight: 500;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+}

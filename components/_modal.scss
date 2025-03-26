@@ -2,7 +2,7 @@
 @use "../abstract/mixins";
 
 .modal {
-  background-color: #fff;
+  background-color: variables.$white;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -12,10 +12,9 @@
   border-radius: 20px;
   place-content: center;
   position: fixed;
-  align-self: center;
-  justify-self: center;
   top: 25%;
   left: 28%;
+  animation: modalOpen 0.3s ease-in-out;
   .fa-x {
     @include mixins.cursor-pointer();
     position: absolute;
@@ -26,7 +25,7 @@
   label {
     @include mixins.font-family-size-color(
       variables.$inter,
-      1.8rem,
+      1.4rem,
       variables.$primary-color
     );
     font-weight: 600;
@@ -36,29 +35,35 @@
   }
   .submit-task {
     display: flex;
-    #created-task {
+    #created-task,
+    #edited-task {
       flex: 2;
       padding: 1.5em;
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
       border: none;
       background-color: variables.$text-color-hover;
-      color: #fff;
+      color: variables.$white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      font-size: 1rem;
       &::placeholder {
         @include mixins.font-family-size-color(
           variables.$montserrat,
           1.3rem,
-          #fff
+          variables.$white
         );
         padding: 1em;
+        text-align: center;
+              font-weight: 500;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
       }
     }
     .submit-button {
       @include mixins.cursor-pointer();
       @include mixins.font-family-size-color(
         variables.$montserrat,
-        1.3rem,
-        #fff
+        1rem,
+        variables.$white
       );
       font-weight: 500;
       flex: 1;
@@ -66,6 +71,25 @@
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
       background-color: variables.$primary-color;
+      &:hover {
+        opacity: 0.8;
+      }
     }
+  }
+  .alert-text {
+    @include mixins.font-family-size-color(variables.$inter, 1.3rem, red);
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+@keyframes modalOpen {
+  from {
+    top: 0%;
+    opacity: 0;
+  }
+  to {
+    top: 25%;
+    opacity: 1;
   }
 }

@@ -7,46 +7,53 @@
     flex-direction: column;
     padding: 2em 0;
     gap: 2em;
-  }
-  .task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
-    padding: 1em;
-
-    label {
+    .task {
       display: flex;
-      gap: 2em;
-      @include mixins.cursor-pointer();
-    }
-    &__buttons {
-      display: flex;
-      gap: 1.5em;
-      color: variables.$primary-color;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 8px;
+      padding: 1em;
 
-      .fa{
-        &-pencil,
-        &-square-xmark {
-          &:hover {
+      .buttons-container {
+        display: flex;
+        gap: 0.8em;
+
+        .button {
+          &-edit {
+            border: 1px solid variables.$primary-color;
+            border-radius: 1em;
+            color: variables.$primary-color;
+            padding: 0.5em 2em;
+          }
+
+          &-delete {
+            padding: 0.5em 2em;
+            border-radius: 1em;
+            border: 1px solid variables.$primary-color;
+            font-size: 18px;
+            color: red;
+          }
+          &-edit:hover,
+          &-delete:hover {
             @include mixins.cursor-pointer();
-            transform: scale(1.2);
+            background-color: variables.$white;
           }
         }
-
-        &-square-xmark {
-          color: red;
-        }
+      }
+      &-content {
+        @include mixins.font-family-size-color(
+          variables.$montserrat,
+          1.2rem,
+          variables.$text-color
+        );
+        text-transform: capitalize;
       }
     }
-    &-content {
-      @include mixins.font-family-size-color(
-        variables.$montserrat,
-        1.2rem,
-        variables.$text-color
-      );
-    }
   }
-
-
+  .clear-all {
+    @include mixins.cursor-pointer();
+    @include mixins.font-family-size-color(variables.$inter, 1.5rem, red);
+    padding: 0.5em;
+    border: none;
+  }
 }

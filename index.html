@@ -9,19 +9,44 @@
     <link rel="stylesheet" href="./styles/reset.css" />
   </head>
   <body>
+    <header class="links-container blur-list">
+      <ul class="links-list">
+        <li>
+          <a
+            class="links-button"
+            href="https://github.com/JoelJR27"
+            target="_blank"
+          >
+            <i class="fa-brands fa-square-github fa-2xl"></i>
+            GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            class="links-button"
+            href="https://www.linkedin.com/in/joelviana27/"
+          >
+            <i class="fa-brands fa-linkedin fa-2xl"></i>
+            Linkedin</a
+          >
+        </li>
+      </ul>
+    </header>
     <main class="main-container">
-      <section class="header__container">
+      <section class="header__container blur-list">
         <div class="header__title__container">
-          <i class="fa-solid fa-list-check fa-2xl"></i>
-          <h1 class="header__title">To-Do</h1>
+          <i class="fa-solid fa-list-check fa-2xl" style="color: #1d202f"></i>
+          <h1 class="header__title">Plan&Do</h1>
         </div>
-        <a id="new-task"
-          >New task
+        <button id="new-task">
+          New task
           <i class="fa-solid fa-plus fa-bounce"></i>
-        </a>
+        </button>
       </section>
-      <section class="tasks__container">
-        <ul class="tasks__list"></ul>
+      <section class="tasks__container blur-list">
+        <ul class="tasks__list">
+        </ul>
+        <button class="clear-all">Clear all tasks</button>
       </section>
       <div class="modal hidden" id="modal">
         <a id="close-modal-button">
@@ -30,21 +55,27 @@
         <label for="created-task">Create new task:</label>
         <div class="submit-task">
           <input type="text" id="created-task" placeholder="Type your task" />
-          <button class="submit-button">Submit new task</button>
+          <button class="submit-button" id="submit-button">
+            Submit new task
+          </button>
+        </div>
+        <p class="alert-text hidden"></p>
+      </div>
+      <div class="modal hidden" id="modal-edit">
+        <a id="close-edited-modal-button">
+          <i class="fa-solid fa-x fa-xl"></i>
+        </a>
+        <label for="edited-task">Edit your task:</label>
+        <div class="submit-task">
+          <input type="text" id="edited-task" placeholder="Type your task" />
+          <button class="submit-button" id="edit-button">Edit task</button>
         </div>
       </div>
     </main>
-    <!-- <footer>
-        <ul>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-        </ul>
-    </footer> -->
-
     <script
       src="https://kit.fontawesome.com/9e31a514e1.js"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
